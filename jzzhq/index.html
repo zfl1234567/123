@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<title>进制转换器的设计</title>
+	<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<div id="app">
+		各进制转二进制	<br/>	<br/>
+		8进制转2进制:	<br/><input type="text" v-model="outputNumber4" /><br/>
+		<br/>
+		结果:<br><input type="text" v-model="fib4" /><br>
+		<br/>
+		10进制转2进制:	<br/><input type="text" v-model="outputNumber2" /><br/>
+		<br/>结果:<br><input type="text" v-model="fib2" /><br>
+		<br/>
+		16进制转2进制:	<br/><input type="text" v-model="outputNumber7" /><br/>
+		<br/>结果:<br><input type="text" v-model="fib7" /><br>
+		<br/>
+		各进制转十进制	<br/>	<br/>
+		2进制转10进制:	<br/>	<br/><input type="text" v-model="outputNumber1" /><br/>
+		<br/>结果:<br><input type="text" v-model="fib1" /><br>
+		<br/>
+		8进制转10进制:	<br/><input type="text" v-model="outputNumber8" /><br/>
+		<br/>结果:<br><input type="text" v-model="fib8" /><br>
+		<br/>
+		16进制转10进制:	<br/><input type="text" v-model="outputNumber6" /><br/>
+		<br/>结果:<br><input type="text" v-model="fib6" /><br>
+		<br/>
+		各进制转十六进制	<br/>	<br/>
+		2进制转16进制:	<br/><input type="text" v-model="outputNumber9" /><br/>
+		<br/>结果：<span>{{fib9}}</span><br/><br/>
+		8进制转16进制:	<br/><input type="text" v-model="outputNumber10" /><br/>
+		<br/>结果:<br><input type="text" v-model="fib10" /><br>
+		<br/>
+		10进制转16进制:	<br/><input type="text" v-model="outputNumber5" /><br/>
+		<br/>结果:<br><input type="text" v-model="fib5" /><br>
+		<br/>
+		各进制转八进制	<br/>	<br/>
+		2进制转8进制:	<br/>	<br/><input type="text" v-model="outputNumber3" /><br/>
+		<br/>结果:<br><input type="text" v-model="fib3" /><br>
+		<br/>
+		10进制转8进制:	<br/><input type="text" v-model="outputNumber11" /><br/>
+		<br/>结果:<br><input type="text" v-model="fib11" /><br>
+		<br/>
+		16进制转8进制:	<br/><input type="text" v-model="outputNumber12" /><br/>
+		<br/>结果:<br><input type="text" v-model="fib12" /><br>
+		<br/>
+	</div>
+	<script type="text/javascript">
+		var vm = new Vue({
+			el: '#app',
+			data: {
+				outputNumber1: '0',
+				outputNumber2: '0',
+				outputNumber3: '0',
+				outputNumber4: '0',
+				outputNumber5: '0',
+				outputNumber6: '0',
+				outputNumber7: '0',
+				outputNumber8: '0',
+				outputNumber9: '0',
+				outputNumber10: '0',
+				outputNumber11: '0',
+				outputNumber12: '0',
+			},
+			computed: {
+				fib1: function() {
+					return parseInt(this.outputNumber1, 2);
+				},
+				fib2: function() {
+					return (parseInt(this.outputNumber2)).toString(2);
+				},
+				fib3: function() {
+					return (parseInt(this.outputNumber3, 2)).toString(8);
+				},
+				fib4: function() {
+					return (parseInt(this.outputNumber4, 8)).toString(2);
+				},
+				fib5: function() {
+					return (parseInt(this.outputNumber5)).toString(16);
+				},
+				fib6: function() {
+					return parseInt(this.outputNumber6, 16);
+				},
+				fib7: function() {
+					return (parseInt(this.outputNumber7, 16)).toString(2);
+				},
+			
+				fib8: function() {
+					return parseInt(this.outputNumber8, 8);
+					},
+				fib9: function() {
+					return (parseInt(this.outputNumber9,2)).toString(16);
+					},
+				fib10: function() {
+					return (parseInt(this.outputNumber10,8)).toString(16);
+					},
+				fib11: function() {
+					return (parseInt(this.outputNumber11,10)).toString(8);
+					},
+				fib12: function() {
+					return (parseInt(this.outputNumber12,16)).toString(8);
+					},
+			}
+		});
+	</script>
+</body>
+</html>
